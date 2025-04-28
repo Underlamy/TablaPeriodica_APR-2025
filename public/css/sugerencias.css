@@ -1,0 +1,473 @@
+/* Estilos para el chat */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar, .footer {
+    flex-shrink: 0;
+}
+
+.chat-section {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los mensajes horizontalmente */
+}
+
+.chat-container {
+    display: flex;
+    align-items: flex-start;
+    max-width: 800px; /* Aumentado para permitir mensajes más anchos */
+    width: 100%;
+    margin-bottom: 30px; /* Aumentado para más espacio entre mensajes */
+}
+
+.avatar {
+    width: 60px; /* Aumentado */
+    height: 60px; /* Aumentado */
+    border-radius: 50%;
+    margin-right: 15px; /* Aumentado */
+}
+
+.message-box {
+    background-color: #e0e0e0;
+    border-radius: 15px; /* Aumentado para un borde más suave */
+    padding: 20px; /* Aumentado para más espacio interno */
+    position: relative;
+    flex: 1;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Aumentado */
+}
+
+.username {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px; /* Aumentado */
+}
+
+.category {
+    font-size: 14px; /* Aumentado */
+    color: #666;
+}
+
+.date {
+    font-size: 14px; /* Aumentado */
+    color: #999;
+}
+
+.message-content {
+    font-size: 16px; /* Aumentado */
+    color: #333;
+    margin-bottom: 15px; /* Aumentado */
+}
+
+.reactions {
+    display: flex;
+    gap: 15px; /* Aumentado */
+}
+
+.reaction {
+    cursor: pointer;
+    font-size: 20px; /* Aumentado */
+}
+
+/* Ajuste para el footer */
+.footer {
+	position: fixed;
+	width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se apilen */
+    gap: 10px; /* Espacio entre elementos */
+	bottom: 0;
+	height: 100px;
+}
+
+.input-box {
+    flex-grow: 1;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    max-width: 70%;
+    width: 100%; /* Asegura que el input ocupe el ancho disponible */
+}
+
+.filter-button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+.filter-menu {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.filter-button:hover .filter-menu,
+.filter-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.filter-button .filter-menu {
+    transition-delay: 0.5s;
+}
+
+.filter-menu strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.filter-menu p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.filter-menu label {
+    display: block;
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.filter-checkbox {
+    margin-right: 5px;
+}
+
+.filter-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-actions span {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-actions span:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los inputs se apilen */
+    gap: 10px; /* Espacio entre inputs */
+}
+
+.modal-tabs input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+    min-width: 0; /* Evita que los inputs se desborden */
+}
+
+.modal-tabs input:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+}
+
+.modal-tabs input:first-child {
+    margin-right: 10px;
+}
+
+.modal-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer button {
+    padding: 10px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer button:hover {
+    background-color: #218838;
+}
+
+.fa-arrow-up{
+	color: #56ff56;
+}
+
+.fa-arrow-down{
+	color: #ff5656;
+}
+
+.fa-arrow-up, .fa-arrow-down{
+	padding-right: 10px;
+}
+
+.upBlock, .downBlock{
+	color: #383838;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .chat-section {
+        padding: 10px; /* Reducir padding */
+    }
+
+    .chat-container {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        margin-bottom: 20px; /* Reducir espacio entre mensajes */
+    }
+
+    .avatar {
+        width: 40px; /* Reducir tamaño del avatar */
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .message-box {
+        padding: 15px; /* Reducir padding */
+        border-radius: 10px; /* Reducir borde redondeado */
+    }
+
+    .username {
+        font-size: 16px; /* Reducir tamaño de fuente */
+    }
+
+    .category, .date {
+        font-size: 12px; /* Reducir tamaño de fuente */
+    }
+
+    .message-content {
+        font-size: 14px; /* Reducir tamaño de fuente */
+        margin-bottom: 10px;
+    }
+
+    .reaction {
+        font-size: 16px; /* Reducir tamaño de los emojis */
+    }
+
+    .footer {
+        flex-direction: column; /* Apilar los elementos del footer */
+        padding: 15px;
+    }
+
+    .input-box {
+        max-width: 100%; /* Ocupar todo el ancho */
+        margin-bottom: 10px; /* Espacio entre input y botón */
+    }
+
+    .filter-button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        max-width: 200px; /* Límite máximo */
+        padding: 8px 16px; /* Reducir padding */
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+
+    .filter-menu {
+        width: 200px; /* Reducir ancho del menú */
+        bottom: 60px; /* Ajustar posición */
+        right: 50%;
+        transform: translateX(50%); /* Centrar el menú */
+    }
+
+    .filter-menu strong {
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+
+    .filter-menu label {
+        font-size: 12px; /* Reducir tamaño de fuente */
+    }
+
+    .modal-content {
+        padding: 15px; /* Reducir padding */
+        max-width: 90%; /* Asegurar que no se desborde */
+    }
+
+    .modal-header h2 {
+        font-size: 20px; /* Reducir tamaño de fuente */
+    }
+
+    .modal-tabs input {
+        font-size: 14px; /* Reducir tamaño de fuente */
+        padding: 8px; /* Reducir padding */
+    }
+
+    .modal-textarea {
+        height: 120px; /* Reducir altura */
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+
+    .modal-footer button {
+        padding: 8px 20px; /* Reducir padding */
+        font-size: 14px; /* Reducir tamaño de fuente */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-section {
+        padding: 5px; /* Reducir más el padding */
+    }
+
+    .chat-container {
+        margin-bottom: 15px; /* Reducir más el espacio entre mensajes */
+    }
+
+    .avatar {
+        width: 30px; /* Reducir más el tamaño del avatar */
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .message-box {
+        padding: 10px; /* Reducir más el padding */
+        border-radius: 8px; /* Reducir más el borde redondeado */
+    }
+
+    .username {
+        font-size: 14px; /* Reducir más el tamaño de fuente */
+    }
+
+    .category, .date {
+        font-size: 10px; /* Reducir más el tamaño de fuente */
+    }
+
+    .message-content {
+        font-size: 12px; /* Reducir más el tamaño de fuente */
+        margin-bottom: 8px;
+    }
+
+    .reaction {
+        font-size: 14px; /* Reducir más el tamaño de los emojis */
+    }
+
+    .input-box {
+        font-size: 12px; /* Reducir tamaño de fuente */
+        padding: 5px 10px; /* Reducir padding */
+    }
+
+    .filter-button {
+        padding: 6px 12px; /* Reducir más el padding */
+        font-size: 12px; /* Reducir más el tamaño de fuente */
+    }
+
+    .filter-menu {
+        width: 180px; /* Reducir más el ancho del menú */
+        bottom: 50px; /* Ajustar posición */
+    }
+
+    .modal-content {
+        padding: 10px; /* Reducir más el padding */
+    }
+
+    .modal-header h2 {
+        font-size: 18px; /* Reducir más el tamaño de fuente */
+    }
+
+    .modal-tabs input {
+        font-size: 12px; /* Reducir más el tamaño de fuente */
+        padding: 6px; /* Reducir más el padding */
+    }
+
+    .modal-textarea {
+        height: 100px; /* Reducir más la altura */
+        font-size: 12px; /* Reducir más el tamaño de fuente */
+    }
+
+    .modal-footer button {
+        padding: 6px 15px; /* Reducir más el padding */
+        font-size: 12px; /* Reducir más el tamaño de fuente */
+    }
+}

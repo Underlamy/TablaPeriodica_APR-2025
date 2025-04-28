@@ -1,0 +1,327 @@
+html {
+    margin: 0px;
+}
+
+body {
+    overflow: hidden;
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0;
+    background-color: #434343ff;
+}
+
+div.toolbox {
+    top: 0;
+    right: 0;
+    padding: 2dvh;
+    height: 96dvh;
+    position: absolute;
+}
+
+#searchbox {
+	z-index: 50;
+    margin-bottom: 2dvh;
+    padding: 3dvh 2dvh 3dvh 2dvh;
+    font-weight: bold;
+    font-size: 3dvh;
+    color: white;
+
+    height: 3dvh;
+    width: 32dvh;
+
+    border-style: none;
+    border-color: none;
+    background-color: #24242475;
+}
+
+#searchbox::placeholder {
+    font-weight: bold;
+    font-size: 3dvh;
+    color: white;
+}
+
+.block {
+    border-radius: 1dvh;
+    width: 31dvh;
+    height: 7dvh;
+}
+
+.searchable {
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-areas:
+        'simbolo nombre';
+}
+
+.creatable {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 2.7dvh;
+    line-height: 230%;
+
+    right: 0;
+    border-radius: 1dvh;
+    margin-top: 2dvh;
+    width: 27dvh;
+    height: 7dvh;
+}
+
+.bar {
+    margin-top: 2dvh;
+    border-radius: 1dvh;
+    grid-area: bar;
+    left: 0;
+    background-color: #24242475;
+    height: inherit;
+    width: 1.5dvh;
+}
+
+div.isotopos {
+    display: grid;
+    grid-template-areas:
+        'bar isotopos';
+    gap: 0.8dvh;
+}
+
+span.isotopos {
+    grid-area: isotopos;
+}
+
+div.simbolo {
+    grid-area: simbolo;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.7dvh;
+    color: white;
+    border-radius: 1dvh;
+    width: 100%;
+    height: 100%;
+    line-height: 230%;
+}
+
+div.nombre {
+    text-transform: uppercase;
+    grid-area: nombre;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.7dvh;
+    color: white;
+    line-height: 235%;
+}
+
+div.scrollbox {
+    padding-right: 2dvh;
+    height: 87dvh;
+    width: 90%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.scrollbox::-webkit-scrollbar {
+    right: 0;
+    width: 1.5dvh;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+    background-color: #33333375;
+    border-radius: 1dvh;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    border-radius: 1dvh;
+    background-color: #24242475;
+}
+
+.toggable:first-child {
+    margin: 0 !important;
+}
+
+.toggable {
+    margin-top: 2dvh;
+}
+
+.alerta {
+    width: 20%;
+    z-index: 10;
+    margin: 1%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 20px;
+    height: 12.5%;
+    background-color: #0a0a0aad;
+}
+
+.alerta i {
+    position: absolute;
+    font-size: 3vw;
+    padding-left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.alerta sup,
+.alerta sub {
+    font-size: 0.7em;
+}
+
+i.warning {
+    color: rgb(255, 252, 55);
+}
+
+i.error {
+    color: rgb(255, 55, 55);
+}
+
+i.info {
+    color: rgb(0, 153, 255);
+}
+
+.alerta>.text {
+    width: 75%;
+    font-size: 1.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding-right: 10%;
+    left: 25%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+sub {
+    font-size: 2dvh;
+}
+
+sup {
+    font-size: 2dvh;
+}
+
+.objectInfo {
+    opacity: 0%;
+    width: 20%;
+    min-height: 50%;
+    max-height: 85%;
+    z-index: 10;
+    margin: 1%;
+    position: absolute;
+    top: 2%;
+    border-radius: 20px;
+    background-color: #24242475;
+}
+
+#canvaInfo {
+    width: 100%;
+    height: 20%;
+}
+
+.objectInfo .info {
+    overflow-y: auto;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 10% 5% 5% 5%;
+    width: 90%;
+    height: 76%;
+}
+
+.objectInfo .info .seccion .titulo {
+	opacity: 50%;
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}
+
+.objectInfo .info .seccion .text {
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.trashcan {
+    right: 36dvh;
+    position: absolute;
+    bottom: 1%;
+}
+
+.trashcan i {
+    color: rgb(192, 192, 192);
+    font-size: 500%;
+}
+
+.daltonAtomo {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#canvaElemento {
+    opacity: 100% !important;
+}
+
+.nombre3D {
+    user-select: none;
+    font-size: 3.5dvh;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+}
+
+.nombre3D>sup {
+    font-size: 2.5dvh !important;
+    font-weight: bold;
+    color: white;
+}
+
+.nombre3D>sub {
+    font-size: 2.5dvh !important;
+    font-weight: bold;
+    color: white;
+}
+
+.menu_filter {
+    display: none;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+    position: absolute;
+}
+
+.menu {
+    border-radius: 1dvh;
+    z-index: 1000;
+    width: 100dvh;
+    height: 60dvh;
+    background-color: rgba(0, 0, 0, 0.493);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close{
+    padding: 1dvh;
+    position: absolute;
+    right: 0;
+    color: rgba(255, 255, 255, 0.849);
+    font-size: 4dvh;
+    cursor: pointer;
+}

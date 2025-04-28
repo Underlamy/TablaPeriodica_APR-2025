@@ -1,0 +1,185 @@
+body{
+    background-color: #434343ff;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+
+    overflow: hidden;
+}
+
+.no-metales{
+    background-color: #ff3720;
+}
+.metales-alcalinos{
+    background-color: #3bff55;  
+}
+.metaloides{
+    background-color: #ff2fbd;  
+}
+.otros-metales{
+    background-color: #c300ff;    
+}
+.alcalinoterreos{
+    background-color:#22ffaa;
+}
+.metales-transicion{
+    background-color: #00d9ff;
+}
+.lantanidos{
+    background-color: #9c9c9c;
+}
+.actinidos{
+    background-color: #313131;
+}
+.halogenos{
+    background-color: #ff792b;
+}
+.gases-nobles{
+    background-color: #ffd900;
+}
+.no-especifico{
+    background-color: rgb(180, 180, 180);
+}
+
+.grupo1{
+    left: 32.4dvh;
+}
+.grupo2{
+    left: 39.905dvh;
+}
+.grupo3{
+    left: 47.411dvh;
+}
+.grupo4{
+    left: 54.917dvh;
+}
+.grupo5{
+    left: 62.423dvh;
+}
+.grupo6{
+    left: 69.929dvh;
+}
+.grupo7{
+    left: 77.435dvh;
+}
+.grupo8{
+    left: 84.941dvh;
+}
+.grupo9{
+    left: 92.447dvh;
+}
+.grupo10{
+    left: 99.952dvh;
+}
+.grupo11{
+    left: 107.458dvh;
+}
+.grupo12{
+    left: 114.964dvh;
+}
+.grupo13{
+    left: 122.47dvh;
+}
+.grupo14{
+    left: 129.976dvh;
+}
+.grupo15{
+    left: 137.482dvh;
+}
+.grupo16{
+    left: 144.988dvh;
+}
+.grupo17{
+    left: 152.494dvh;
+}
+.grupo18{
+    left: 160dvh;
+}
+
+.periodo1{
+    top: 14dvh;
+}
+.periodo2{
+    top: 21dvh;
+}
+.periodo3{
+    top: 28dvh;
+}
+.periodo4{
+    top: 35dvh;
+}
+.periodo5{
+    top: 42dvh;
+}
+.periodo6{
+    top: 49dvh;
+}
+.periodo7{
+    top: 56dvh;
+}
+.periodo8{
+    top: 67dvh;
+}
+.periodo9{
+    top: 74dvh;
+}
+
+.num-atomico{
+    padding: 0.5dvh;
+    position: absolute;
+    font-size: 1dvh;
+}
+.simbolo{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    font-size: 3dvh;
+    text-align: center;
+}
+.nombre{
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    font-size: 0.6dvh;
+    text-align: center;
+}
+
+.bloque{
+    cursor: pointer;
+    transition: .2s;
+
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+
+    width: 6dvh;
+    height: 6dvh;
+
+    border-radius: 1.5dvh;
+    position: fixed;
+}
+
+div.hoverBloque:hover {
+    transform: scale(2);
+    z-index: 1;
+}
+
+video{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1c1c1d;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+}

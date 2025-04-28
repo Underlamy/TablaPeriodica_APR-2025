@@ -1,0 +1,76 @@
+.noMetales {
+    background-color: rgb(255, 71, 71);
+}
+.simbolo.noMetales{
+    background-color: #ee3131ff;
+}
+
+.metalesAlcalinos {
+    background-color: rgb(125, 255, 90);
+}
+.simbolo.metalesAlcalinos {
+    background-color: #6dd850ff;
+}
+
+.metaloides {
+    background-color: rgb(250, 71, 255);
+}
+.simbolo.metaloides {
+    background-color: #eb3cf0ff;
+}
+
+.otrosMetales {
+    background-color: rgb(184, 79, 255);
+}
+.simbolo.otrosMetales {
+    background-color: #ab4aecff;
+}
+
+.alcalinoTerreos {
+    background-color: rgb(72, 224, 138);
+}
+.simbolo.alcalinoTerreos {
+    background-color: #44c97eff;
+}
+
+.metalesTransicion {
+    background-color: rgb(79, 188, 255);
+}
+.simbolo.metalesTransicion {
+    background-color: #46a6e0ff;
+}
+
+.lantanidos {
+    background: rgb(107, 107, 107);
+}
+.simbolo.lantanidos {
+    background: rgb(85, 85, 85);
+}
+
+.actinidos {
+    background-color: rgb(48, 48, 48);
+}
+.simbolo.actinidos {
+    background-color: #242424ff;
+}
+
+.halogenos {
+    background-color: rgb(255, 146, 54);
+}
+.simbolo.halogenos {
+    background-color: #eb8102ff;
+}
+
+.gasesNobles {
+    background-color: rgb(255, 197, 71);
+}
+.simbolo.gasesNobles {
+    background-color: #e9b33fff;
+}
+
+.noEspecifico {
+    background-color: #e2e2e2ff;
+}
+.simbolo.noEspecifico {
+    background-color: #c9c9c9ff;
+}

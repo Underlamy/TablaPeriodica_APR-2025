@@ -1,0 +1,81 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.checkBox {
+    position: fixed;
+}
+
+.clasificacion {
+    position: fixed;
+    color: white;
+}
+
+@keyframes unpop {
+    0% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+
+    100% {
+        transform: scale(0.75);
+        opacity: 10%;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.75);
+        opacity: 10%;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+.checkBox {
+    width: 2dvh;
+    height: 2dvh;
+    border-radius: 0.5dvh;
+}
+
+.clasificacion {
+    font-size: 1.7dvh;
+    padding-left: 2.5dvh;
+}
+
+.columna1 {
+    top: 21dvh;
+}
+
+.columna2 {
+    top: 24.53dvh;
+}
+
+.columna3 {
+    top: 28.16dvh;
+}
+
+.columna4 {
+    top: 31.5dvh;
+}
+
+.fila1 {
+    left: 47.411dvh;
+}
+
+.fila2 {
+    left: 77.435dvh;
+}
+
+.fila3 {
+    left: 100dvh;
+}
+
+.btn-check{
+    border-color: transparent;
+    background-color: transparent;
+}

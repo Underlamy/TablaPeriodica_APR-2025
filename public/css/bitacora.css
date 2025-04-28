@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2f2f2f; /* Fondo oscuro como en la imagen */
+    color: white;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.superContainer{
+	padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff0000, #ff9900, #33cc33, #3399ff, #cc33cc); /* Gradiente de colores */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.date-button {
+    background-color: #444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 200px; /* Límite máximo para el botón */
+}
+
+.date-button:hover {
+    background-color: #555;
+}
+
+.date-menu {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 15px;
+    position: absolute;
+    top: 60px; /* Ajustado para que aparezca justo debajo del botón */
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    left: 50%;
+    transform: translateX(-50%); /* Centrar el menú horizontalmente */
+}
+
+.date-menu.show {
+    display: block; /* Mostrar cuando se activa */
+}
+
+.date-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.date-menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #555;
+    font-size: 14px; /* Tamaño de fuente ajustable */
+}
+
+.date-menu li:last-child {
+    border-bottom: none;
+}
+
+.date-menu li:hover {
+    background-color: #555;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* Permite que los boxes se apilen en pantallas pequeñas */
+	width: 50%; 
+	margin: auto; 
+}
+
+.box {
+    background-color: #444; /* Color de los cuadros */
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    height: 200px; /* Altura fija para los cuadros */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px; /* Mínimo ancho para los boxes */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .title {
+        font-size: 36px; /* Reducir tamaño del título */
+    }
+
+    .subtitle {
+        font-size: 16px; /* Reducir tamaño del subtítulo */
+    }
+
+    .date-button {
+        font-size: 14px; /* Reducir tamaño de fuente del botón */
+        padding: 8px 16px; /* Reducir padding */
+    }
+
+    .date-menu {
+        width: 180px; /* Reducir ancho del menú en pantallas pequeñas */
+        top: 50px; /* Ajustar posición */
+        font-size: 12px; /* Reducir tamaño de fuente del menú */
+    }
+
+    .container {
+        flex-direction: column; /* Apilar los boxes verticalmente */
+        gap: 15px; /* Reducir espacio entre boxes */
+    }
+
+    .box {
+        height: 150px; /* Reducir altura de los boxes */
+        font-size: 14px; /* Reducir tamaño de fuente */
+        padding: 15px; /* Reducir padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .subtitle {
+        font-size: 14px; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .date-button {
+        font-size: 12px; /* Más pequeño en pantallas muy pequeñas */
+        padding: 6px 12px; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .date-menu {
+        width: 150px; /* Más pequeño en pantallas muy pequeñas */
+        top: 45px; /* Ajustar posición */
+        font-size: 10px; /* Más pequeño en pantallas muy pequeñas */
+    }
+
+    .box {
+        height: 120px; /* Más pequeño en pantallas muy pequeñas */
+        font-size: 12px; /* Más pequeño en pantallas muy pequeñas */
+        padding: 10px; /* Más pequeño en pantallas muy pequeñas */
+    }
+}

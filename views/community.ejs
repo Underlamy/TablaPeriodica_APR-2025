@@ -1,0 +1,45 @@
+<%- include('header') %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eleccion</title>
+    <link rel="stylesheet" href="./css/community.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box" id="box1">
+        <a href="/tablaPeriodica">
+          <h2>Tabla Periodica</h2>
+          <img class="Cambiar" id="img1" src="./resources/img/tabla.gif" alt="Laboratorio" />
+        </a>
+      </div>
+
+      <div class="vertical-boxes">
+        <div class="box2" id="box2">
+          <a href="/laboratorio">
+            <h2>Laboratorio</h2>
+            <img class="Cambiar" id="img2"  src="./resources/img/laboratorio.gif" alt="Tabla" />
+          </a>
+        </div>
+		
+        <div class="box2" id="box3">
+          <a href="?q=sugerencias">
+		  <div class="cajica">
+            <div class="envelope" id="box3">
+                <div class="flap"></div>
+                <div class="letter"></div>
+            </div>
+			</div>
+            <h2>Sugerencias</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="./js/community/home.js"></script>
+  </body>
+</html>

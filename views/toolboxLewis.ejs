@@ -1,0 +1,20 @@
+<div class="scrollbox">
+  <% elementos.forEach(elemento=> { %>
+
+    <div class="creatable toggable <%= elemento.tipo %>" id="<%= elemento.nombre %>"
+      data-simbolo="<%= elemento.simbolo %>" data-nombre="<%= elemento.nombre %>"
+      data-numAtomico="<%= elemento.numAtomico %>" data-periodo="<%= elemento.periodo %>"
+      data-grupo="<%= elemento.grupo %>" data-tipo="<%= elemento.tipo %>"
+      onmousedown="crearAtomo(event)">
+      
+      <div class="searchable block <%= elemento.tipo %>">
+        <div class="simbolo <%= elemento.tipo %>">
+          <%= elemento.simbolo %>
+        </div>
+        <div class="nombre">
+          <%= elemento.nombre %>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+</div>

@@ -1,0 +1,40 @@
+<%- include('./loader.html') %>
+<%- include('settings') %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="./css/menu.css">
+</head>
+
+<body>
+    <div class="Texto">
+        <h1>BIENVENIDO!!</h1>
+    </div>
+    <div class="container">
+        <div class="box laboratorio">
+            <a href="/laboratorio">
+                <h2>Laboratorio</h2>
+                <img class="Cambiar" src="resources/img/laboratorio.gif" alt="Laboratorio">
+            </a>
+        </div>
+        <div class="box tabla">
+            <a href="/tablaPeriodica">
+                <h2>Tabla Periodica</h2>
+                <img class="Cambiar" style="transform: scale(1.7);" src="resources/img/tabla.gif" alt="Tabla">
+            </a>
+        </div>
+        <div class="box community">
+            <a href="/community">
+                <h2>Community</h2>
+                <i class="fa-solid fa-envelope menu"></i>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

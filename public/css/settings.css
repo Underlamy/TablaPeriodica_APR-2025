@@ -1,0 +1,32 @@
+div.settings {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    margin: 1dvh;
+    z-index: 10;
+    max-width: 20dvh;
+    max-height: 3dvh;
+
+    display: grid;
+    gap: 1dvh;
+    grid-template-areas:
+        'home config left right';
+}
+
+div.settings button{
+    max-width: 4dvh !important;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    font-size:3dvh;
+    font-weight: bold;
+}
+
+.fa-house{ grid-area: home;}
+.fa-gear{ grid-area: config;}
+.fa-chevron-left { grid-area: left;}
+.fa-chevron-right { grid-area: right}

@@ -1,0 +1,247 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #434343ff;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.titulo {
+    font-size: 2.5dvh;
+    color: #999999;
+}
+
+.texto {
+    font-size: 4dvh;
+    color: #eeeeee;
+}
+
+.division {
+    width: 100%;
+    height: 100%;
+    padding: 2dvh;
+
+    display: grid;
+    gap: 2.5dvh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'canvas info';
+}
+
+.bloque,
+.full {
+    background-color: #24242474;
+    height: 11.5dvh;
+    border-radius: 2.5dvh;
+}
+
+.canvas {
+    display: block !important;
+    border-radius: 2.5dvh;
+    grid-area: canvas;
+    min-height: 96dvh;
+    min-width: 100%;
+}
+
+.full {
+    width: 100%;
+}
+
+.content {
+    text-align: center;
+    padding: 1.5dvh;
+}
+
+.info {
+    height: 95.5%;
+    max-width: 96%;
+    padding-right: 2dvh;
+    grid-area: info;
+    display: grid;
+    gap: 2.5dvh;
+    grid-template-areas:
+        'isotopo'
+        'tipo'
+        'two'
+        'vida';
+}
+
+.columns {
+    display: grid;
+    gap: 2.5dvh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'electrones periodo'
+        'protones grupo'
+        'neutrones abundancia'
+        'fusion ebullicion';
+}
+
+.isotopo {
+    display: grid;
+    gap: 2.5dvh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        'nombre nombre masa';
+}
+
+.nombre {
+    grid-area: nombre;
+}
+
+.masa {
+    grid-area: masa;
+}
+
+.electrones {
+    grid-area: electrones;
+}
+
+.cosaCanva {
+    padding: 1dvh 0 0 5dvh;
+    float: left;
+    width: 10dvh;
+    height: 10dvh;
+}
+
+.cosa {
+    width: inherit;
+    height: inherit;
+}
+
+video {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1c1c1d;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+}
+
+#canvaElemento {
+    border-radius: 5%;
+}
+
+#canvaElectron {
+    opacity: 100% !important;
+    border-radius: 5%;
+}
+
+#canvaProton {
+    opacity: 100% !important;
+    border-radius: 5%;
+}
+
+#canvaNeutron {
+    opacity: 100% !important;
+    border-radius: 5%;
+}
+
+.fa-play,
+.fa-pause {
+    border-radius: 2dvh;
+    padding: 2dvh;
+    bottom: 3.5dvh;
+    right: 51%;
+    font-size: 3dvh;
+    background-color: rgb(19, 19, 19);
+    border: none;
+    color: #eeeeee;
+    position: fixed;
+}
+
+.filter {
+    z-index: 50;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.411);
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    border-radius: 2dvh;
+    background-color: #64646449;
+    width: 150dvh;
+    height: 75dvh;
+    z-index: 51;
+    position: absolute;
+    color: #eeeeee;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-areas:
+        'sidebar main';
+}
+
+.sidebar{
+    grid-area: sidebar;
+    border-radius: 2dvh;
+    height: 100%;
+}
+
+.sidebar > div{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2dvh 3dvh 2dvh 2dvh;
+    height: 2dvh;
+    font-size: 2dvh;
+}
+
+.configText{
+    height: 3dvh !important;
+    font-size: 3dvh !important;
+}
+
+#active{
+    background-color: transparent !important;
+}
+
+.filler{
+    height: 53dvh !important;
+}
+
+.main{
+    grid-area: main;
+    width: 75%;
+    height: 100%;
+}
+
+#nombre{
+    text-transform: uppercase;
+}
+
+#tipo{
+	font-variant: small-caps;
+}
+
+.optMasa{
+	border: none;
+	background-color: #242424;
+	font: inherit;
+	color: inherit;
+}
+
+.sltMasa{
+	font: inherit;
+	color: inherit;
+	border: none;
+	background-color: transparent;
+}
