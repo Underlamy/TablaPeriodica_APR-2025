@@ -1,0 +1,36 @@
+<%- include('header') %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora</title>
+    <link rel="stylesheet" href="./css/bitacora.css">
+</head>
+<body>
+	<div class="superContainer">
+    <div class="header">
+        <h1 class="title">BITACORA</h1>
+        <p class="subtitle">ICONO DE CALENDARIO</p>
+        <button class="date-button" onclick="toggleDateMenu()">ESCOGE TU FECHA</button>
+        <div class="date-menu" id="dateMenu">
+            <ul>
+                <li onclick="selectDate('2023-10-01')">1 de Octubre, 2023</li>
+                <li onclick="selectDate('2023-10-02')">2 de Octubre, 2023</li>
+                <li onclick="selectDate('2023-10-03')">3 de Octubre, 2023</li>
+                <li onclick="selectDate('2023-10-04')">4 de Octubre, 2023</li>
+                <li onclick="selectDate('2023-10-05')">5 de Octubre, 2023</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box"> <!--PLATICA DE LO QUE TRABAJAMOS --></div>
+        <div class="box"> <!--POR QUÉ HICIMOS LO Q HICIMOS LOL --></div>
+        <div class="box"> <!--IMAGENES DE REFERENCIA XDXXDXD --></div>
+    </div>
+	</div>
+    <script src="./js/community/bitacora.js"></script>
+</body>
+</html>

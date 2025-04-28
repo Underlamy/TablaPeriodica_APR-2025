@@ -1,0 +1,29 @@
+<%- include('./loader.html') %>
+<%- include('settings') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleccion Lab</title>
+    <link rel="stylesheet" href="./css/eleccionLab.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <a href="?m=lewis">
+                <h2>Estructura de Lewis</h2>
+                <img class="Cambiar" src="./resources/img/tabla.gif" alt="Laboratorio">
+            </a>
+        </div>
+        <div class="box" id="box2">
+            <a href="?m=dalton">
+                <h2>Modelo de Dalton</h2>
+                <img class="Cambiar" src="./resources/img/laboratorio.gif" alt="Tabla">
+            </a>
+        </div>
+    </div>    
+      <script src="./js/laboratorio/eleccionLab.js"></script>
+</body>
+</html>

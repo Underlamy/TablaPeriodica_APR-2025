@@ -1,0 +1,167 @@
+<%- include('./loader.html') %>
+<%- include('settings') %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= datos.nombre %></title>
+
+    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="./css/settings.css">
+
+    <script>
+        document.getElementsByTagName("title")[0].innerHTML = document.getElementsByTagName("title")[0].innerHTML.toUpperCase();
+    </script>
+</head>
+
+<body>
+    <div class="division">
+        <div id="canvasParent" class="canvas bloque">
+            <button id="pause" class="fa-solid fa-play" value=true></button>
+            <canvas id="canvaElemento"></canvas>
+        </div>
+
+        <div class="info">
+            <div class="isotopo">
+                <div class="nombre full">
+                    <div class="content">
+                        <div class="titulo" id="simbolo" data-value="<%= datos.simbolo %>">
+							NOMBRE
+						</div>
+
+                        <div class="texto" id="nombre" data-value="<%= datos.nombre %>">
+							<%= datos.nombre %> (<%= datos.simbolo %>)
+						</div>
+                    </div>
+                </div>
+                <div class="masa full">
+                    <div class="content">
+                        <div class="titulo">MASA ATOMICA</div>
+                        <div class="texto"id="masaAtomica" data-value="<%= datos.masaAtomica %>">
+						<select class="sltMasa" id="redirect">	
+							<% isotopos.forEach(item => { %>
+								<option class="optMasa" value="<%- item.masaAtomica%>">
+									<%- item.masaAtomica %>
+								</option>
+							<% }) %>
+						</select>
+						</div>
+                    </div>
+ </div>
+            </div>
+
+            <div class="tipo full">
+                <div class="content">
+                    <div class="titulo">TIPO</div>
+                    <div id="tipo" class="texto" data-value="<%= datos.tipo %>"><%= datos.tipo %></div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="electrones full">
+                    <div id="canvasElectron" class="cosaCanva">
+                        <canvas class="cosa" id="canvaElectron"></canvas>
+                    </div>
+                    <div class="content">
+                        <div class="titulo">ELECTRONES</div>
+                        <div class="texto" id="electrones" data-value="<%= datos.z %>"><%= datos.z %></div>
+                    </div>
+                </div>
+
+                <div class="periodo full">
+                    <div class="content">
+                        <div class="titulo">PERIODO</div>
+                        <div class="texto" id="periodo" data-value="<%= datos.periodo %>"><%= datos.periodo %></div>
+                    </div>
+                </div>
+
+                <div class="protones full">
+                    <div id="canvasProton" class="cosaCanva">
+                        <canvas class="cosa" id="canvaProton"></canvas>
+                    </div>
+                    <div class="content">
+                        <div class="titulo">PROTONES</div>
+                        <div class="texto" id="protones" data-value="<%= datos.z %>">
+							<%= datos.z %>
+						</div>
+                    </div>
+                </div>
+
+                <div class="grupo full">
+                    <div class="content">
+                        <div class="titulo">GRUPO</div>
+                        <div class="texto" id="grupo" data-value="<%= datos.grupo %>"><%= datos.grupo %></div>
+                    </div>
+                </div>
+
+                <div class="neutrones full">
+                    <div id="canvasNeutron" class="cosaCanva">
+                        <canvas id="canvaNeutron" class="cosa"></canvas>
+                    </div>
+                    <div class="content">
+                        <div class="titulo">NEUTRONES</div>
+                        <div class="texto" id="neutrones" data-value="<%= datos.masaAtomica - datos.z %>"><%= datos.masaAtomica - datos.z %></div>
+                    </div>
+                </div>
+
+                <div class="abundancia full">
+                    <div class="content">
+                        <div class="titulo">ABUNDANCIA</div>
+                        <div class="texto" id="abundancia" data-value="<%= datos.abundancia %>">
+						<% if(datos.abundancia == 0){ %>
+								ARTIFICIAL
+							<% }else{ %>
+							<%= datos.abundancia %>%
+							<% } %>
+						</div>
+                    </div>
+                </div>
+
+                <div id="fusion" class="fusion full">
+                    <div class="content">
+                        <div class="titulo">PUNTO DE FUSION</div>
+                        <div class="texto"><%= datos.puntoFusion %>°C</div>
+                    </div>
+                </div>
+
+                <div id="ebullicion" class="ebullicion full">
+                    <div class="content">
+                        <div class="titulo">PUNTO DE EBULLICION</div>
+                        <div class="texto"><%= datos.puntoEbullicion %>°C</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vida full">
+                <div class="content">
+                    <div class="titulo">VIDA MEDIA</div>
+                    <div class="texto" id="vidaMedia"><%
+						if(datos.vidaMedia == 0){ %>
+							ETERNO	
+						<% }else{ %>
+							<%= datos.vidaMedia;%>
+							<%
+						}
+					%>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/colores.js"></script>
+    <script>
+        for (let cont = 0; cont < nombres.length; cont++) {
+            if (nombres[cont][0] == document.getElementById("tipo").innerHTML) {
+                document.getElementById("tipo").innerHTML = nombres[cont][1];
+            }
+        }
+
+    </script>
+    <script src="./js/info/index.js" type="module"></script>
+</body>
+
+</html>
